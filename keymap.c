@@ -55,6 +55,7 @@ static inline void reset_scroll_accum(void) {
 }
 
 #define RIGHTCLICK_HOLD_THRESHOLD 400
+#define MIDDLECLICK_HOLD_THRESHOLD 400
 #define SCROLL_ARM_THRESHOLD 120
 #define DOUBLECLICK_THRESHOLD 250
 
@@ -84,6 +85,12 @@ void matrix_scan_user(void) {
     if (press_click_count == 1) {
         if (!hold_action_sent && !scroll_mode_triggered && elapsed >= RIGHTCLICK_HOLD_THRESHOLD) {
             tap_code16(MS_BTN2);
+            hold_action_sent = true;
+            reset_click_state();
+        }
+    } else if (press_click_count == 2) {
+        if (!hold_action_sent && !scroll_mode_triggered && elapsed >= MIDDLECLICK_HOLD_THRESHOLD) {
+            tap_code16(MS_BTN3);
             hold_action_sent = true;
             reset_click_state();
         }

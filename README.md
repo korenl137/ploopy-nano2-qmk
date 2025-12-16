@@ -64,6 +64,7 @@ This keymap maps multiple actions onto a single `BTN_SMART` button:
 
 - **1-click tap**: Left click
 - **1-click hold (no move, 400ms)**: Right click (tap)
+- **2-click hold (no move, 400ms)**: Middle click (scroll click)
 - **1-click hold + move**: Left drag (momentary)
 - **2-click hold + move**: Scroll mode (momentary)
 
@@ -76,6 +77,7 @@ In scroll mode, trackball movement is converted into wheel scrolling (`h/v`) and
 You can adjust the feel by changing these `#define` values near the top of `keymap.c`:
 
 - `RIGHTCLICK_HOLD_THRESHOLD` (default: `400` ms)
+- `MIDDLECLICK_HOLD_THRESHOLD` (default: `400` ms)
 - `SCROLL_ARM_THRESHOLD` (default: `120` ms)
 - `DOUBLECLICK_THRESHOLD` (default: `250` ms)
 - `DRAG_ARM_THRESHOLD` (default: `70` ms)
