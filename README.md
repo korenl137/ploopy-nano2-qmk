@@ -42,6 +42,10 @@ qmk compile -kb ploopyco/nano_2/rev2_003 -km my_keymap
 
 On success, a `.uf2` file is generated and usually copied to your `qmk_firmware` folder.
 
+Output paths (typical):
+
+- Generated under: `qmk_firmware/.build/` (example: `.build/ploopyco_nano_2_rev2_003_my_keymap.uf2`)
+
 Example output filename:
 
 - `ploopyco_nano_2_rev2_003_my_keymap.uf2`
