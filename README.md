@@ -79,3 +79,18 @@ You can adjust the feel by changing these `#define` values near the top of `keym
 - `MOVE_THRESHOLD_SCROLL` (default: `3`)
 - `SCROLL_DIVISOR_H / SCROLL_DIVISOR_V` (default: `17`)
 
+---
+
+## Release (UF2)
+
+- **Tagging**: Create a git tag for each binary release (example: `v0.1.0`).
+- **Asset**: Attach the generated `.uf2` file to the GitHub Release for that tag.
+- **Filename example**: `ploopyco_nano_2_rev2_003_my_keymap.uf2`
+
+---
+
+## License
+
+This project is distributed under the GPL-2.0 license. See `LICENSE`.
+
+---
