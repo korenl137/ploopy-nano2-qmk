@@ -81,7 +81,6 @@ You can adjust the feel by changing these `#define` values near the top of `keym
 
 ---
 
-<<<<<<< HEAD
 ## Release (UF2)
 
 - **Tagging**: Create a git tag for each binary release (example: `v0.1.0`).
@@ -90,33 +89,8 @@ You can adjust the feel by changing these `#define` values near the top of `keym
 
 ---
 
-=======
->>>>>>> 7193d91124c8f5442dfe7533959f8a9c651a0496
 ## License
 
 This project is distributed under the GPL-2.0 license. See `LICENSE`.
 
-<<<<<<< HEAD
 ---
-=======
----
-
-## Releases (UF2) and Source Matching
-
-When publishing a prebuilt `.uf2` file, it is recommended to:
-
-1. Create a git tag (example: `v0.1.0`).
-2. Attach the `.uf2` file to the GitHub Release created from that tag.
-
-This makes it clear which exact source revision produced the binary.
-
----
-
-## QMK Firmware Version Used for Building
-
-This keymap was built against the upstream QMK firmware repository.
-
-- **QMK repo**: `https://github.com/qmk/qmk_firmware`
-- **QMK commit**: `c1fedab4570a0b87b3422239a724681788727b09`
-
->>>>>>> 7193d91124c8f5442dfe7533959f8a9c651a0496
