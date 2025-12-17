@@ -1,4 +1,3 @@
-
 # ploopy-nano2-qmk
 
 This repository contains a custom QMK keymap for the Ploopy Nano 2 trackball.
@@ -10,57 +9,54 @@ It includes **only a single `keymap.c` file** (not the full QMK firmware tree).
 ## Target
 
 - **Keyboard**: `ploopyco/nano_2/rev2_003`
-- **Keymap name**: Example: `my_keymap`
+- **Keymap name**: e.g. `my_keymap`
 
 ---
 
 ## How to use
 
-### 1) Install into your QMK tree
+1. Clone or download the official QMK firmware repository.
+2. Copy this repository’s `keymap.c` into the appropriate keymap directory, for example:
 
-This assumes you already have a working `qmk_firmware` setup.
+   ```
+   qmk_firmware/keyboards/ploopyco/nano_2/rev2_003/keymaps/my_keymap/keymap.c
+   ```
 
-1. Create the following folder inside your `qmk_firmware` tree:
+3. Configure QMK environment and build the firmware:
 
-   `keyboards/ploopyco/nano_2/keymaps/my_keymap/`
+   ```
+   qmk compile -kb ploopyco/nano_2/rev2_003 -km my_keymap
+   ```
 
-2. Copy this repository's `keymap.c` into that folder.
-
-Final path:
-
-`qmk_firmware/keyboards/ploopyco/nano_2/keymaps/my_keymap/keymap.c`
-
----
-
-### 2) Build
-
-Run the following command (QMK MSYS on Windows):
-
-```sh
-qmk compile -kb ploopyco/nano_2/rev2_003 -km my_keymap
-```
-
-On success, a `.uf2` file is generated and usually copied to your `qmk_firmware` folder.
-
-Output paths (typical):
-
-- Generated under: `qmk_firmware/.build/` (example: `.build/ploopyco_nano_2_rev2_003_my_keymap.uf2`)
-
-Example output filename:
-
-- `ploopyco_nano_2_rev2_003_my_keymap.uf2`
+4. Flash the resulting firmware to your Ploopy Nano 2 following the usual QMK / Ploopy flashing instructions.
 
 ---
 
-### 3) Flash
+## AI assistance
 
-Enter bootloader mode and copy the generated `.uf2` file to the mounted device.
+This keymap was created with the assistance of AI-based coding tools (Windsurf, ChatGPT 5.2, Claude Opus 4.5).  
+All generated code was reviewed and modified by the author before being committed.
+
+Some parts of the layer behavior and helper logic were initially suggested by these AI tools and then adapted for this specific device.
 
 ---
 
-## Features / Gestures
+## Upstream projects
 
-This keymap maps multiple actions onto a single `BTN_SMART` button:
+This keymap is intended to be used with:
+
+- **QMK Firmware** – https://qmk.fm  
+- **Ploopy Nano 2 firmware tree** inside the official QMK repository (the `ploopyco/nano_2` target).
+
+This repository only contains a single `keymap.c` file and does *not* include the full QMK source tree.
+
+The initial behavior is loosely based on the default Nano 2 keymap provided by Ploopy / QMK, then customized for this workflow.
+
+---
+
+## License and warranty
+
+This repository is distributed under the terms of the **GPL-2.0** license (see `LICENSE`).  
 
 - **1-click tap**: Left click
 - **1-click hold (no move, 400ms)**: Right click (tap)
