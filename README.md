@@ -4,6 +4,8 @@ This repository contains a custom QMK keymap for the Ploopy Nano 2 trackball.
 
 It includes **only a single `keymap.c` file** (not the full QMK firmware tree).
 
+Current version: `v0.2.1`
+
 ---
 
 ## Target
@@ -59,8 +61,8 @@ The initial behavior is loosely based on the default Nano 2 keymap provided by P
 This repository is distributed under the terms of the **GPL-2.0** license (see `LICENSE`).  
 
 - **1-click tap**: Left click
-- **1-click hold (no move, 400ms)**: Right click (tap)
-- **2-click hold (no move, 400ms)**: Middle click (scroll click)
+- **1-click hold (no move, 250ms)**: Right click (tap)
+- **2-click hold (no move, 250ms)**: Middle click (scroll click)
 - **1-click hold + move**: Left drag (momentary)
 - **2-click hold + move**: Scroll mode (momentary)
 
@@ -72,20 +74,28 @@ In scroll mode, trackball movement is converted into wheel scrolling (`h/v`) and
 
 You can adjust the feel by changing these `#define` values near the top of `keymap.c`:
 
-- `RIGHTCLICK_HOLD_THRESHOLD` (default: `400` ms)
+- `RIGHTCLICK_HOLD_THRESHOLD` (default: `250` ms)
 - `MIDDLECLICK_HOLD_THRESHOLD` (default: `250` ms)
 - `SCROLL_ARM_THRESHOLD` (default: `120` ms)
 - `DOUBLECLICK_THRESHOLD` (default: `250` ms)
-- `DRAG_ARM_THRESHOLD` (default: `70` ms)
-- `MOVE_THRESHOLD_DRAG` (default: `2`)
+- `DRAG_ARM_THRESHOLD` (default: `40` ms)
+- `MOVE_THRESHOLD_DRAG` (default: `1`)
 - `MOVE_THRESHOLD_SCROLL` (default: `3`)
 - `SCROLL_DIVISOR_H / SCROLL_DIVISOR_V` (default: `17`)
 
 ---
 
+## Release notes
+
+### v0.2.1
+
+- Improved left-drag start reliability by suppressing the first pointer movement report when entering drag mode (ensures the OS sees button-down before movement).
+
+---
+
 ## Release (UF2)
 
-- **Tagging**: Create a git tag for each binary release (example: `v0.1.0`).
+- **Tagging**: Create a git tag for each binary release (example: `v0.2.1`).
 - **Asset**: Attach the generated `.uf2` file to the GitHub Release for that tag.
 - **Filename example**: `ploopyco_nano_2_rev2_003_my_keymap.uf2`
 
