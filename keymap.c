@@ -54,14 +54,14 @@ static inline void reset_scroll_accum(void) {
     scroll_accum_v = 0;
 }
 
-#define RIGHTCLICK_HOLD_THRESHOLD 400
+#define RIGHTCLICK_HOLD_THRESHOLD 250
 #define MIDDLECLICK_HOLD_THRESHOLD 250
 #define SCROLL_ARM_THRESHOLD 120
 #define DOUBLECLICK_THRESHOLD 250
 
-#define DRAG_ARM_THRESHOLD 70
+#define DRAG_ARM_THRESHOLD 40
 
-#define MOVE_THRESHOLD_DRAG 2
+#define MOVE_THRESHOLD_DRAG 1
 #define MOVE_THRESHOLD_SCROLL 3
 
 #define MOUSE_BTN_L 0x01
@@ -172,6 +172,8 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
             if (held >= DRAG_ARM_THRESHOLD && moved_drag) {
                 left_drag_momentary = true;
                 scroll_mode_triggered = true;
+                mouse_report.x = 0;
+                mouse_report.y = 0;
             }
         }
     }
